@@ -31,8 +31,8 @@
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             {{-- Logotipo--}}
           <a href="/" class="flex-shrink-0 flex items-center">
-            <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">{{--logo de la pagina resposive--}}
-            <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">{{--logo de la pagina--}}
+            <img class="block lg:hidden h-8 w-auto" src="public/tj.png" alt="Workflow">{{--logo de la pagina resposive--}}
+            <img class="hidden lg:block h-10 w-auto" src="{{ asset('/tj.png') }}" alt="Workflow">{{--logo de la pagina--}}
           </a>
           {{--Menu principal--}}
           <div class="hidden sm:block sm:ml-6">
@@ -44,8 +44,9 @@
               @foreach ($categories as $category)
                 <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>
               @endforeach--}}
+              <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" >Blog</a>
 
-              
+              {{--
               <div x-data="{ open2: false}">
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" x-on:click="open2=true">Categorias</a>
               
@@ -56,10 +57,10 @@
                   @endforeach
               </div>
             </div>
+              --}}
               
-              
-              {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a> --}}
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sobre Mi</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
             </div>
             
           </div>
@@ -111,7 +112,7 @@
         @else
           <div>
               <a href="{{route('login')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
-              <a href="{{route('register')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+              {{-- <a href="{{route('register')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a> --}}
           </div>
         @endauth
       </div>
@@ -123,9 +124,11 @@
       <div class="px-2 pt-2 pb-3 space-y-1" >
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         {{-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a> --}}
+        <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" >Blog</a>
+       {{--
         @foreach ($categories as $category)
         <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{$category->name}}</a>
-        @endforeach
+        @endforeach---}}
         {{-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a> --}}
       </div>
